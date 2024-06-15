@@ -1,10 +1,11 @@
-module example
+module template
 
 go 1.22
 
 require (
 	github.com/golang/mock v1.6.0
 	github.com/golangci/golangci-lint v1.56.2
+	github.com/sethvargo/go-githubactions v1.2.0
 	mvdan.cc/gofumpt v0.6.0
 )
 
