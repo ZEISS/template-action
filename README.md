@@ -10,6 +10,18 @@ This template supports `Makefile` to run tooling.
 
 > `make` is choosen as it is available on most systems.
 
+## Build
+
+```bash
+make
+```
+
+Commit the version change and artifacts in the repository.
+
+```bash
+git tag -a v1.0.0 -m "Release v1.0.0"
+```
+
 ## License
 
 [MIT](/LICENSE)

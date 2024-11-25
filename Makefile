@@ -1,19 +1,15 @@
 .DEFAULT_GOAL := build
 
+-include .env
+export
+
 # Go variables
 GO 					?= go
 GO_RUN_TOOLS 		?= $(GO) run -modfile ./tools/go.mod
 GO_TEST 			?= $(GO_RUN_TOOLS) gotest.tools/gotestsum --format pkgname
 GO_RELEASER 		?= $(GO_RUN_TOOLS) github.com/goreleaser/goreleaser
 GO_MOD				?= $(shell ${GO} list -m)
-
-# Air to live reload
-AIR					?= air
-
-.PHONY: release
-release: ## Release the project.
-	$(GO_RELEASER) release --clean
-
+	
 .PHONY: build
 build: ## Build the binary file.
 	$(GO_RELEASER) build --snapshot --clean
@@ -30,9 +26,9 @@ mocks: ## Generate mocks.
 fmt: ## Run go fmt against code.
 	$(GO_RUN_TOOLS) mvdan.cc/gofumpt -w .
 
-.PHONY: start
-start: ## Run air live reload. Create a .air.toml file to configure.
-	$(AIR)
+.PHONY: run
+run: ## Run the application.
+	$(GO) run main.go
 
 .PHONY: vet
 vet: ## Run go vet against code.

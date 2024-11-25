@@ -1,6 +1,18 @@
 function chooseBinary() {
   if (platform === 'linux' && arch === 'x64') {
-      return `main-linux-amd64-${VERSION}`
+      return `main-amd64-linux`
+  }
+
+  if (platform === 'linux' && arch === 'arm64') {
+    return `main-arm64-linux`
+}
+
+  if (platform === 'darwin' && arch === 'arm64') {
+      return `main-arm64-darwin`
+  }
+
+  if (platform === 'darwin' && arch === 'x64') {
+      return `main-amd64-darwin`
   }
 }
 
