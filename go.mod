@@ -3,7 +3,7 @@ module template
 go 1.24
 
 require (
-	github.com/sethvargo/go-githubactions v1.3.1
+	github.com/sethvargo/go-githubactions v1.3.2
 	github.com/stretchr/testify v1.11.1
 )
 
