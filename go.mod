@@ -11,7 +11,7 @@ tool (
 )
 
 require (
-	github.com/sethvargo/go-githubactions v1.3.2
+	github.com/sethvargo/go-githubactions v1.4.0
 	github.com/stretchr/testify v1.11.1
 )
 
